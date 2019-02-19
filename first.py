@@ -5,14 +5,13 @@ from urllib.request import urlopen
 import bs4
 
 class ClientWeb(object):
-    """web packtpub"""
+    """docstringlientWeb."""
     def __init__(self):
-        super(packtpub, self).__init__()
+        super(ClientWeb, self).__init__()
         pass
 
     def descarregar_html(arg):
-        f = urllib2.ur
-        lopen("https://www.packtpub.com/packt/offers/free-learning/")
+        f = urllib2.urlopen("http://www.eps.udl.cat/ca/")
         html = f.read()
         f.close()
         return html
@@ -20,13 +19,6 @@ class ClientWeb(object):
     def buscar_activitats(self, html):
         arbre = bs4. BeautifulSoup(html, features="lxml")
         activitats = arbre.find_all("div","featured-links-item")
-        activity_list = []
-        for activity in activitats:
-            title = activity.find("span", "flink-title")
-            link = activity.find("a")
-            activity_list.append(title.text, link["href"])
-        return activitats_list
-
 
 
     def run(self):
